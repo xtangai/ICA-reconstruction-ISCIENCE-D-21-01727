@@ -1,0 +1,29 @@
+Code and Data Description
+
+IF YOU USED THIS DATA SET, PLEASE CITE THE ORIGINAL MANUSCRIPT
+
+C.mat: contains the data of four single cells as described in the paper generated from 25degC. For each cell, we have seven fields: referenced capacity (RefCap), referenced voltage (volt_ref), referenced current (curr_ref), referenced temperature (temp_ref) testing voltage (volt_test), testing current (curr_test), and testing temperature (temp_test). The profiles marked with test is generated from pulse current profiles, while the profiles marked with ref is generated from constant current profiles. Data is measured from YkyTech platform described in the paper.
+
+CHT.mat: contains the data of four single cells as described in the paper generated from 45degC. For each cell, we have seven fields: referenced capacity (RefCap), referenced voltage (volt_ref), referenced current (curr_ref), referenced temperature (temp_ref) testing voltage (volt_test), testing current (curr_test), and testing temperature (temp_test). The profiles marked with test is generated from pulse current profiles, while the profiles marked with ref is generated from constant current profiles. Data is measured from YkyTech platform described in the paper.
+
+CLT.mat: contains the data of four single cells as described in the paper generated from 0degC. For each cell, we have seven fields: referenced capacity (RefCap), referenced voltage (volt_ref), referenced current (curr_ref), referenced temperature (temp_ref) testing voltage (volt_test), testing current (curr_test), and testing temperature (temp_test). The profiles marked with test is generated from pulse current profiles, while the profiles marked with ref is generated from constant current profiles. Data is measured from YkyTech platform described in the paper.
+
+gelu.mat: contains a fitting function of GeLU function.
+
+myfcn.mat: contains a spline fitting function describing the voltage vs time relationship of a charging trajectory. It can be generated from Gen_myfcn.m file.
+
+net_base.mat: contains a pre-trained neural network as described in the paper. It can be generated from Gen_myfcn.m file.
+
+Pack_ic_ref.mat: contains the referenced data (close-to noise-free) for six groups of cells described in the paper. For each cell, we have three fields: voltage (volt), current (curr), and temperature (temp).
+
+Ica_this.mat: stored for SoH calculation. Generated from test_Pack.m
+
+Pur_BCR.mat: stored the data collected from the BCR-based balancing process. It has the following fields: BCR: stored the BCR sequence of the six cells. BCR_ref: stored the referenced BCR of the six cells. Cap: stored the referenced capacity of the six cells. CelltoBal: stored the real-time information of which cell should be operated by the hardware. If the value is 0, it means no cells should be balanced, and the hardware is idling. Ibal: the balancing current used for ICA reconstruction. It is generated from the specifications of the hardware. Ibal_ref: the balancing current of each cell measured from INA 260 current sensor (treated as referenced value). IbalRem: the output current of the DC-DC converter, experimentally measured from INA260 sensor. IbalTar: the input current of the DC-DC converter, experimentally measured from the INA 260 sensor. Ibal_ref is calculated from IbalRem and IbalTar. PackI: stored the pack current, measured from the INA 260 sensors. SoC: referenced SoC of each cell, calculated from Ah-counting method. T: temperature of each cell, measured with LM35D sensor. V: voltage of each cell, measured with LTC6810 sensor.
+
+
+Use test_single_noise.m to generate the main results for case study 1
+Use test_signle_pulse_LT.m to generate the main results for case study 2 – 0degC case
+Use test_signle_pulse_MT.m to generate the main results for case study 2 – 25degC case 
+Use test_signle_pulse_HT.m to generate the main results for case study 2 – 45degC case
+Use test_Pack.m to generate the main results for case study 3
+Use test_SoH.m to generate the main results for case study 4
